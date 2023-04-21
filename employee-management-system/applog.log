@@ -1,0 +1,33 @@
+2023-04-21 17:08:23,130 [INFO] com.hdfc.employee.EmployeeManagementSystemApplication [main] Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 13844 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-21 17:08:23,134 [INFO] com.hdfc.employee.EmployeeManagementSystemApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-21 17:08:23,831 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-21 17:08:23,888 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interfaces.
+2023-04-21 17:08:24,457 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7500 (http)
+2023-04-21 17:08:24,470 [INFO] org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-04-21 17:08:24,470 [INFO] org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-21 17:08:24,702 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-21 17:08:24,703 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1516 ms
+2023-04-21 17:08:24,907 [INFO] org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-21 17:08:24,955 [INFO] org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-21 17:08:25,129 [INFO] org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-21 17:08:25,238 [INFO] com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-21 17:08:25,424 [INFO] com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-21 17:08:25,455 [INFO] org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-21 17:08:26,079 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-21 17:08:26,092 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 17:08:26,394 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-21 17:08:26,780 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7500 (http) with context path ''
+2023-04-21 17:08:26,790 [INFO] com.hdfc.employee.EmployeeManagementSystemApplication [main] Started EmployeeManagementSystemApplication in 4.131 seconds (JVM running for 4.969)
+2023-04-21 17:08:41,787 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-7500-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-21 17:08:41,787 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-7500-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-21 17:08:41,789 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-7500-exec-1] Completed initialization in 1 ms
+2023-04-21 17:08:41,832 [INFO] com.hdfc.employee.controller.EmployeeController [http-nio-7500-exec-1] Web service called
+2023-04-21 17:08:42,185 [INFO] com.hdfc.employee.controller.EmployeeController [http-nio-7500-exec-2] Web service called
+2023-04-21 17:08:42,385 [INFO] com.hdfc.employee.controller.EmployeeController [http-nio-7500-exec-6] Web service called
+2023-04-21 17:08:42,595 [INFO] com.hdfc.employee.controller.EmployeeController [http-nio-7500-exec-5] Web service called
+2023-04-21 17:13:04,301 [INFO] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(10)-127.0.0.1] Application shutdown requested.
+2023-04-21 17:13:04,313 [INFO] org.apache.catalina.core.StandardService [RMI TCP Connection(10)-127.0.0.1] Stopping service [Tomcat]
+2023-04-21 17:13:04,315 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [RMI TCP Connection(10)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-21 17:13:04,323 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(10)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 17:13:04,325 [INFO] com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(10)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-04-21 17:13:04,334 [INFO] com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(10)-127.0.0.1] HikariPool-1 - Shutdown completed.

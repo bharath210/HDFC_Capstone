@@ -1,0 +1,9 @@
+	package com.hdfc.employee.dto;
+
+import java.time.LocalDate;
+
+public class EmployeeDTO {
+	private long employeeId;
+	private String employeeName;
+	private LocalDate dateOfBirth;
+}

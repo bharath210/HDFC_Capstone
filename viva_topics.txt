@@ -1,0 +1,18 @@
+Java Webservices (SOAP + REST), POSTMAN
+ 
+Java Webservices (SOAP + REST), POSTMAN
+ 
+APIGEE - API Management Platform - (Introduction, Basic Concepts, KVM, Caching, Flows, Debugging, Security, Analytics)
+ 
+CI/CD using Jenkins. Introduction to Jenkins, Create and Manage Users kin Jenkins, What is CI/CD pipelines, How to set up CI/CD pipelines, How to manage CI/CD pipelines.
+ 
+Introduction to Docker, hub.docker.com, managing containers
+ 
+Introduction to Kubernetes, launching Single Node Cluster, Launching Multi Node cluster(Building Microservices Arch)
+ 
+Deploy Containers Using Kubectl, Deploying Spring Boot application
+ 
+Cloud Native Architecture - Principles of Cloud Native Architecture, Patterns, Tools, and Technologies used.
+Cloud Concepts (AWS/AZURE)
+   
+Cloud Concepts (AWS/AZURE)

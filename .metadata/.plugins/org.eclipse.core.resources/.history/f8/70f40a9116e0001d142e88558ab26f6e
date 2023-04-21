@@ -1,0 +1,23 @@
+package com.hdfc.employee.service;
+
+import org.springframework.stereotype.Service;
+
+import com.hdfc.employee.entity.Employee;
+
+/**
+ * 
+ * @author Bharath Kumar
+ *
+ * @CreatedDate 21-Apr-2023
+ */
+
+@Service
+public class EmployeeServiceImpl implements IEmployeeService{
+
+	@Override
+	public Employee getEmployeeById(long employeeId) {
+		
+		return null;
+	}
+	
+}

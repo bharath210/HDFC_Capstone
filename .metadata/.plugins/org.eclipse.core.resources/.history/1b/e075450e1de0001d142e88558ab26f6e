@@ -1,0 +1,14 @@
+package com.hdfc.employee.service;
+
+import com.hdfc.employee.entity.Employee;
+
+/**
+ * 
+ * @author Bharath Kumar
+ *
+ * @CreatedDate 21-Apr-2023
+ */
+public interface IEmployeeService {
+	
+	public Employee getEmployeeById(long employeeId);
+}

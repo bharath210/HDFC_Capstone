@@ -1,0 +1,6 @@
+2023-04-21 17:24:11,153 INFO com.hdfc.employee.EmployeeManagementSystemApplication [main] Started EmployeeManagementSystemApplication in 4.782 seconds (JVM running for 5.993)
+2023-04-21 17:32:10,067 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(12)-127.0.0.1] Application shutdown requested.
+2023-04-21 17:32:10,092 INFO org.apache.catalina.core.StandardService [RMI TCP Connection(12)-127.0.0.1] Stopping service [Tomcat]
+2023-04-21 17:32:10,108 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(12)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 17:32:10,111 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(12)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-04-21 17:32:10,134 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(12)-127.0.0.1] HikariPool-1 - Shutdown completed.

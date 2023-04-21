@@ -1,0 +1,24 @@
+package com.hdfc.employee.service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.hdfc.employee.entity.Employee;
+import com.hdfc.employee.exception.EmployeeNotFoundException;
+
+@SpringBootTest
+class EmployeeServiceImplTest {
+	
+	@Autowired
+	IEmployeeService employeeService;
+
+	@Test
+	void testGetEmployeeById() throws EmployeeNotFoundException {
+		Employee employee = employeeService.getEmployeeById(2);
+		assertEquals("Naveen", employee.getEmployeeName());
+	}
+
+}
