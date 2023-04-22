@@ -15,3 +15,4 @@ select * from employee;
 insert into employee ( employee_name, date_of_birth) values ('Naveen', '1999-09-14');
 
 show databases;
+show tables;
