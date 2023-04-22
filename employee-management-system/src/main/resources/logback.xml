@@ -9,7 +9,7 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>logs/archived/webservice_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <!-- each archived file, size max 5KB -->
-            <maxFileSize>5KB</maxFileSize>
+            <maxFileSize>1MB</maxFileSize>
             
         </rollingPolicy>
 
