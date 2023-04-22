@@ -14,7 +14,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.client.RestTemplate;
-
+/**
+ * 
+ * @author Bharath Kumar
+ *
+ * @CreatedDate 22-Apr-2023
+ */
 @Configuration
 public class Config {
 	

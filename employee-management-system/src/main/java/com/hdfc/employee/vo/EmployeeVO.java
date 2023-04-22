@@ -7,7 +7,12 @@ import java.util.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
-
+/**
+ * 
+ * @author Bharath Kumar
+ *
+ * @CreatedDate 22-Apr-2023
+ */
 public class EmployeeVO {
 	
 	private long employeeId;
@@ -57,8 +62,8 @@ public class EmployeeVO {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setDateOfBirth(LocalDate dateOfBirth) {
+		this.dateOfBirth = encrypt(dateOfBirth.toString(), KEY);
 	}
 	
 

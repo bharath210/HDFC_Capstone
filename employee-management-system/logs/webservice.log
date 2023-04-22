@@ -48,3 +48,10 @@
 2023-04-22 16:54:37,343 INFO org.springframework.web.servlet.DispatcherServlet [https-jsse-nio-7500-exec-2] Initializing Servlet 'dispatcherServlet'
 2023-04-22 16:54:37,345 INFO org.springframework.web.servlet.DispatcherServlet [https-jsse-nio-7500-exec-2] Completed initialization in 2 ms
 2023-04-22 16:54:37,489 INFO com.hdfc.employee.controller.EmployeeController [https-jsse-nio-7500-exec-2] Web service called
+2023-04-22 17:34:04,704 WARN javax.management.remote.misc [RMI TCP Connection(41)-127.0.0.1] The server has decided to close this client connection.
+2023-04-22 22:30:24,449 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(340)-127.0.0.1] Application shutdown requested.
+2023-04-22 22:30:27,315 INFO org.apache.catalina.core.StandardService [RMI TCP Connection(340)-127.0.0.1] Stopping service [Tomcat]
+2023-04-22 22:30:27,872 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [RMI TCP Connection(340)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-22 22:30:29,318 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(340)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-22 22:30:29,753 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(340)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-04-22 22:30:29,940 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(340)-127.0.0.1] HikariPool-1 - Shutdown completed.
