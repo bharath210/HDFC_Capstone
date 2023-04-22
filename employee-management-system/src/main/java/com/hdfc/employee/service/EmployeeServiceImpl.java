@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.hdfc.employee.entity.Employee;
 import com.hdfc.employee.exception.InvalidEmployeeIdException;
 import com.hdfc.employee.repository.IEmployeeRepository;
+import com.hdfc.employee.vo.EmployeeVO;
 
 /**
  * 
@@ -21,10 +22,12 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	IEmployeeRepository employeeRepo;
 
 	@Override
-	public Employee getEmployeeById(long employeeId) throws InvalidEmployeeIdException  {
+	public EmployeeVO getEmployeeById(long employeeId) throws InvalidEmployeeIdException  {
 
-		return employeeRepo.findById(employeeId).orElseThrow(
+		Employee employee = employeeRepo.findById(employeeId).orElseThrow(
 				() -> new InvalidEmployeeIdException("Invalid EmployeeId : " + employeeId));
+		EmployeeVO employeeVO = new EmployeeVO(employee.getEmployeeId(), employee.getEmployeeName(), employee.getDateOfBirth());
+		return employeeVO;
 	}
 	
 }

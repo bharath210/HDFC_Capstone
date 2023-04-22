@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.hdfc.employee.entity.Employee;
 import com.hdfc.employee.exception.InvalidEmployeeIdException;
+import com.hdfc.employee.vo.EmployeeVO;
 
 @SpringBootTest
 class EmployeeServiceImplTest {
@@ -17,7 +17,7 @@ class EmployeeServiceImplTest {
 
 	@Test
 	void testGetEmployeeById() throws InvalidEmployeeIdException {
-		Employee employee = employeeService.getEmployeeById(1);
+		EmployeeVO employee = employeeService.getEmployeeById(1);
 		assertEquals("Bharath Kumar", employee.getEmployeeName());
 	}
 
