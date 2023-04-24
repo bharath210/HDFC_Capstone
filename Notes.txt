@@ -33,3 +33,26 @@ war {
 }
 
 -> gradlew build
+
+
+
+To generate key store and convert HTTP to HTTPS
+----------------------------------------------------
+->keytool -genkeypair -alias myalias -keyalg RSA -keysize 2048 -validity 365 -keystore keystore.p12 -storetype PKCS12 //it will generate keystore
+
+application.properties configuration
+
+server.ssl.enabled=true
+server.ssl.key-store-type=PKCS12
+server.ssl.key-store=classpath:keystore.p12
+server.ssl.key-store-password=bharath
+server.ssl.key-alias=keystore
+
+
+-> keytool -export -alias myalias -file server.crt -keystore keystore.p12 -storetype PKCS12  // to import certificate in windows
+
+CURL
+----------------------
+
+curl https://l
+

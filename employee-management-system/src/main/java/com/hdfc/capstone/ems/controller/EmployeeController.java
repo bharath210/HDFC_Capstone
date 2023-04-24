@@ -27,7 +27,7 @@ public class EmployeeController {
 	
 	@GetMapping("/get/{employeeId}")
 	public EmployeeVO getEmployeeById(@PathVariable long employeeId) throws InvalidEmployeeIdException {
-		log.info("getByEmployeeId : " + employeeId + " called.......................................");
+		log.info("getByEmployeeId : {} called", employeeId);
 		return employeeService.getEmployeeById(employeeId);
 	}
 

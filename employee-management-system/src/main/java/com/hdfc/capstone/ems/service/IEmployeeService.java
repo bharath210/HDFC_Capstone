@@ -1,6 +1,5 @@
 package com.hdfc.capstone.ems.service;
 
-import com.hdfc.capstone.ems.entity.Employee;
 import com.hdfc.capstone.ems.exception.InvalidEmployeeIdException;
 import com.hdfc.capstone.ems.vo.EmployeeVO;
 
