@@ -18,7 +18,7 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	@Value("${service.host}")
+	@Value("${service.host:https://localhost:7500}")
 	private String host;
 	
 	public Employee getEmployee(long employeeId) {

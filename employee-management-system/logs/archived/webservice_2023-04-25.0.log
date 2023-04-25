@@ -1,0 +1,661 @@
+2023-04-25 10:25:27.955 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 1208 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-25 10:25:27.960 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-25 10:25:29.127 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 10:25:29.191 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interfaces.
+2023-04-25 10:25:30.198 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7500 (https)
+2023-04-25 10:25:30.217 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-25 10:25:30.219 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-25 10:25:30.491 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-25 10:25:30.491 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2451 ms
+2023-04-25 10:25:30.927 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 10:25:31.056 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 10:25:31.573 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 10:25:31.839 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-04-25 10:25:32.635 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-04-25 10:25:32.687 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-25 10:25:33.957 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 10:25:33.975 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:25:34.426 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-25 10:25:35.299 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-7500], TLS virtual host [_default_], certificate type [UNDEFINED] configured from [file:/D:/HDFC_Training/Capstone/employee-management-system/bin/main/keystore.p12] using alias [keystore] and with trust store [null]
+2023-04-25 10:25:35.435 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7500 (https) with context path ''
+2023-04-25 10:25:35.446 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Started EmployeeManagementSystemApplication in 8.232 seconds (JVM running for 9.841)
+2023-04-25 10:25:50.436 [https-jsse-nio-7500-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 10:25:50.436 [https-jsse-nio-7500-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-25 10:25:50.437 [https-jsse-nio-7500-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-04-25 10:25:50.538 [https-jsse-nio-7500-exec-4] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 2 called
+2023-04-25 10:25:50.894 [https-jsse-nio-7500-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed; nested exception is java.lang.ExceptionInInitializerError] with root cause
+java.lang.IllegalArgumentException: Detected a Non-hex character at 1 or 2 position
+	at org.springframework.security.crypto.codec.Hex.decode(Hex.java:58)
+	at org.springframework.security.crypto.encrypt.AesBytesEncryptor.<init>(AesBytesEncryptor.java:100)
+	at org.springframework.security.crypto.encrypt.AesBytesEncryptor.<init>(AesBytesEncryptor.java:85)
+	at org.springframework.security.crypto.encrypt.Encryptors.standard(Encryptors.java:69)
+	at org.springframework.security.crypto.encrypt.Encryptors.text(Encryptors.java:91)
+	at com.hdfc.capstone.ems.utils.EncryptionUtil.<clinit>(EncryptionUtil.java:11)
+	at com.hdfc.capstone.ems.vo.EmployeeVO.<init>(EmployeeVO.java:22)
+	at com.hdfc.capstone.ems.service.EmployeeServiceImpl.getEmployeeById(EmployeeServiceImpl.java:29)
+	at com.hdfc.capstone.ems.controller.EmployeeController.getEmployeeById(EmployeeController.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-04-25 10:27:07.293 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-04-25 10:27:07.306 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-25 10:27:07.308 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-25 10:27:07.318 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:27:07.321 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-25 10:27:07.329 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-25 10:27:09.663 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 5744 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-25 10:27:09.667 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-25 10:27:10.361 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 10:27:10.422 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interfaces.
+2023-04-25 10:27:11.086 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7500 (https)
+2023-04-25 10:27:11.100 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-25 10:27:11.103 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-25 10:27:11.253 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-25 10:27:11.253 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1530 ms
+2023-04-25 10:27:11.448 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 10:27:11.501 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 10:27:11.684 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 10:27:11.802 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-04-25 10:27:12.003 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-04-25 10:27:12.040 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-25 10:27:12.696 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 10:27:12.708 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:27:13.061 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-25 10:27:13.863 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-7500], TLS virtual host [_default_], certificate type [UNDEFINED] configured from [file:/D:/HDFC_Training/Capstone/employee-management-system/bin/main/keystore.p12] using alias [keystore] and with trust store [null]
+2023-04-25 10:27:13.889 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7500 (https) with context path ''
+2023-04-25 10:27:13.902 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Started EmployeeManagementSystemApplication in 4.664 seconds (JVM running for 5.687)
+2023-04-25 10:27:18.219 [https-jsse-nio-7500-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 10:27:18.219 [https-jsse-nio-7500-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-25 10:27:18.220 [https-jsse-nio-7500-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-04-25 10:27:18.260 [https-jsse-nio-7500-exec-3] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 2 called
+2023-04-25 10:27:18.328 [https-jsse-nio-7500-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed; nested exception is java.lang.ExceptionInInitializerError] with root cause
+java.lang.IllegalArgumentException: Hex-encoded string must have an even number of characters
+	at org.springframework.security.crypto.codec.Hex.decode(Hex.java:51)
+	at org.springframework.security.crypto.encrypt.AesBytesEncryptor.<init>(AesBytesEncryptor.java:100)
+	at org.springframework.security.crypto.encrypt.AesBytesEncryptor.<init>(AesBytesEncryptor.java:85)
+	at org.springframework.security.crypto.encrypt.Encryptors.standard(Encryptors.java:69)
+	at org.springframework.security.crypto.encrypt.Encryptors.text(Encryptors.java:91)
+	at com.hdfc.capstone.ems.utils.EncryptionUtil.<clinit>(EncryptionUtil.java:11)
+	at com.hdfc.capstone.ems.vo.EmployeeVO.<init>(EmployeeVO.java:22)
+	at com.hdfc.capstone.ems.service.EmployeeServiceImpl.getEmployeeById(EmployeeServiceImpl.java:29)
+	at com.hdfc.capstone.ems.controller.EmployeeController.getEmployeeById(EmployeeController.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-04-25 10:27:47.985 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-04-25 10:27:47.997 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-25 10:27:47.998 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-25 10:27:48.006 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:27:48.009 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-25 10:27:48.017 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-25 10:27:50.697 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 10664 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-25 10:27:50.701 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-25 10:27:51.390 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 10:27:51.456 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interfaces.
+2023-04-25 10:27:52.052 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7500 (https)
+2023-04-25 10:27:52.066 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-25 10:27:52.066 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-25 10:27:52.211 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-25 10:27:52.211 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1447 ms
+2023-04-25 10:27:52.408 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 10:27:52.462 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 10:27:52.643 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 10:27:52.763 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-04-25 10:27:52.960 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-04-25 10:27:53.000 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-25 10:27:53.764 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 10:27:53.778 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:27:54.091 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-25 10:27:54.800 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-7500], TLS virtual host [_default_], certificate type [UNDEFINED] configured from [file:/D:/HDFC_Training/Capstone/employee-management-system/bin/main/keystore.p12] using alias [keystore] and with trust store [null]
+2023-04-25 10:27:54.825 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7500 (https) with context path ''
+2023-04-25 10:27:54.836 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Started EmployeeManagementSystemApplication in 4.58 seconds (JVM running for 5.538)
+2023-04-25 10:27:58.727 [https-jsse-nio-7500-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 10:27:58.728 [https-jsse-nio-7500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-25 10:27:58.729 [https-jsse-nio-7500-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-04-25 10:27:58.775 [https-jsse-nio-7500-exec-2] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 2 called
+2023-04-25 10:27:58.856 [https-jsse-nio-7500-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed; nested exception is java.lang.ExceptionInInitializerError] with root cause
+java.lang.IllegalArgumentException: Hex-encoded string must have an even number of characters
+	at org.springframework.security.crypto.codec.Hex.decode(Hex.java:51)
+	at org.springframework.security.crypto.encrypt.AesBytesEncryptor.<init>(AesBytesEncryptor.java:100)
+	at org.springframework.security.crypto.encrypt.AesBytesEncryptor.<init>(AesBytesEncryptor.java:85)
+	at org.springframework.security.crypto.encrypt.Encryptors.standard(Encryptors.java:69)
+	at org.springframework.security.crypto.encrypt.Encryptors.text(Encryptors.java:91)
+	at com.hdfc.capstone.ems.utils.EncryptionUtil.<clinit>(EncryptionUtil.java:11)
+	at com.hdfc.capstone.ems.vo.EmployeeVO.<init>(EmployeeVO.java:22)
+	at com.hdfc.capstone.ems.service.EmployeeServiceImpl.getEmployeeById(EmployeeServiceImpl.java:29)
+	at com.hdfc.capstone.ems.controller.EmployeeController.getEmployeeById(EmployeeController.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-04-25 10:34:15.769 [RMI TCP Connection(9)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-04-25 10:34:15.783 [RMI TCP Connection(9)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-25 10:34:15.784 [RMI TCP Connection(9)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-25 10:34:15.793 [RMI TCP Connection(9)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:34:15.795 [RMI TCP Connection(9)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-25 10:34:15.802 [RMI TCP Connection(9)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-25 10:34:18.403 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 8864 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-25 10:34:18.406 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-25 10:34:19.118 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 10:34:19.184 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interfaces.
+2023-04-25 10:34:19.776 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7500 (https)
+2023-04-25 10:34:19.788 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-25 10:34:19.788 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-25 10:34:19.935 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-25 10:34:19.936 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1470 ms
+2023-04-25 10:34:20.141 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 10:34:20.206 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 10:34:20.394 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 10:34:20.510 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-04-25 10:34:20.711 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-04-25 10:34:20.748 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-25 10:34:21.401 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 10:34:21.412 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:34:21.720 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-25 10:34:22.433 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-7500], TLS virtual host [_default_], certificate type [UNDEFINED] configured from [file:/D:/HDFC_Training/Capstone/employee-management-system/bin/main/keystore.p12] using alias [keystore] and with trust store [null]
+2023-04-25 10:34:22.455 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7500 (https) with context path ''
+2023-04-25 10:34:22.465 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Started EmployeeManagementSystemApplication in 4.519 seconds (JVM running for 5.57)
+2023-04-25 10:34:29.245 [https-jsse-nio-7500-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 10:34:29.246 [https-jsse-nio-7500-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-25 10:34:29.247 [https-jsse-nio-7500-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-04-25 10:34:29.286 [https-jsse-nio-7500-exec-4] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 2 called
+2023-04-25 10:34:29.358 [https-jsse-nio-7500-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.RuntimeException: Error encrypting text] with root cause
+java.security.NoSuchAlgorithmException: Cannot find any provider supporting AES-256
+	at java.base/javax.crypto.Cipher.getInstance(Cipher.java:571)
+	at com.hdfc.capstone.ems.utils.EncryptionUtil.encrypt(EncryptionUtil.java:18)
+	at com.hdfc.capstone.ems.vo.EmployeeVO.<init>(EmployeeVO.java:22)
+	at com.hdfc.capstone.ems.service.EmployeeServiceImpl.getEmployeeById(EmployeeServiceImpl.java:29)
+	at com.hdfc.capstone.ems.controller.EmployeeController.getEmployeeById(EmployeeController.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-04-25 10:34:46.678 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-04-25 10:34:46.689 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-25 10:34:46.690 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-25 10:34:46.698 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:34:46.700 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-25 10:34:46.708 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-25 10:34:49.186 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 3964 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-25 10:34:49.190 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-25 10:34:49.900 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 10:34:49.964 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interfaces.
+2023-04-25 10:34:50.579 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7500 (https)
+2023-04-25 10:34:50.596 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-25 10:34:50.597 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-25 10:34:50.790 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-25 10:34:50.790 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1542 ms
+2023-04-25 10:34:51.040 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 10:34:51.094 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 10:34:51.286 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 10:34:51.407 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-04-25 10:34:51.597 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-04-25 10:34:51.630 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-25 10:34:52.284 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 10:34:52.296 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:34:52.609 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-25 10:34:53.352 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-7500], TLS virtual host [_default_], certificate type [UNDEFINED] configured from [file:/D:/HDFC_Training/Capstone/employee-management-system/bin/main/keystore.p12] using alias [keystore] and with trust store [null]
+2023-04-25 10:34:53.377 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7500 (https) with context path ''
+2023-04-25 10:34:53.387 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Started EmployeeManagementSystemApplication in 4.651 seconds (JVM running for 5.611)
+2023-04-25 10:34:56.213 [https-jsse-nio-7500-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 10:34:56.214 [https-jsse-nio-7500-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-25 10:34:56.215 [https-jsse-nio-7500-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-04-25 10:34:56.259 [https-jsse-nio-7500-exec-3] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 2 called
+2023-04-25 10:34:56.368 [https-jsse-nio-7500-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.RuntimeException: Error encrypting text] with root cause
+java.security.InvalidKeyException: Invalid AES key length: 15 bytes
+	at java.base/com.sun.crypto.provider.AESCrypt.init(AESCrypt.java:90)
+	at java.base/com.sun.crypto.provider.ElectronicCodeBook.init(ElectronicCodeBook.java:97)
+	at java.base/com.sun.crypto.provider.CipherCore.init(CipherCore.java:482)
+	at java.base/com.sun.crypto.provider.CipherCore.init(CipherCore.java:400)
+	at java.base/com.sun.crypto.provider.AESCipher.engineInit(AESCipher.java:306)
+	at java.base/javax.crypto.Cipher.implInit(Cipher.java:867)
+	at java.base/javax.crypto.Cipher.chooseProvider(Cipher.java:929)
+	at java.base/javax.crypto.Cipher.init(Cipher.java:1299)
+	at java.base/javax.crypto.Cipher.init(Cipher.java:1236)
+	at com.hdfc.capstone.ems.utils.EncryptionUtil.encrypt(EncryptionUtil.java:19)
+	at com.hdfc.capstone.ems.vo.EmployeeVO.<init>(EmployeeVO.java:22)
+	at com.hdfc.capstone.ems.service.EmployeeServiceImpl.getEmployeeById(EmployeeServiceImpl.java:29)
+	at com.hdfc.capstone.ems.controller.EmployeeController.getEmployeeById(EmployeeController.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-04-25 10:35:48.284 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-04-25 10:35:48.296 [RMI TCP Connection(3)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-25 10:35:48.298 [RMI TCP Connection(3)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-25 10:35:48.305 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:35:48.308 [RMI TCP Connection(3)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-25 10:35:48.318 [RMI TCP Connection(3)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-25 10:35:50.746 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 12664 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-25 10:35:50.749 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-25 10:35:51.435 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 10:35:51.506 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interfaces.
+2023-04-25 10:35:52.109 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7500 (https)
+2023-04-25 10:35:52.125 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-25 10:35:52.130 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-25 10:35:52.311 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-25 10:35:52.312 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1502 ms
+2023-04-25 10:35:52.518 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 10:35:52.577 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 10:35:52.784 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 10:35:52.909 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-04-25 10:35:53.110 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-04-25 10:35:53.147 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-25 10:35:53.863 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 10:35:53.875 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:35:54.210 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-25 10:35:54.959 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-7500], TLS virtual host [_default_], certificate type [UNDEFINED] configured from [file:/D:/HDFC_Training/Capstone/employee-management-system/bin/main/keystore.p12] using alias [keystore] and with trust store [null]
+2023-04-25 10:35:54.983 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7500 (https) with context path ''
+2023-04-25 10:35:54.995 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Started EmployeeManagementSystemApplication in 4.667 seconds (JVM running for 5.685)
+2023-04-25 10:35:59.567 [https-jsse-nio-7500-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 10:35:59.568 [https-jsse-nio-7500-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-25 10:35:59.569 [https-jsse-nio-7500-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-04-25 10:35:59.614 [https-jsse-nio-7500-exec-4] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 2 called
+2023-04-25 10:35:59.694 [https-jsse-nio-7500-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.RuntimeException: Error encrypting text] with root cause
+java.security.InvalidKeyException: Invalid AES key length: 19 bytes
+	at java.base/com.sun.crypto.provider.AESCrypt.init(AESCrypt.java:90)
+	at java.base/com.sun.crypto.provider.ElectronicCodeBook.init(ElectronicCodeBook.java:97)
+	at java.base/com.sun.crypto.provider.CipherCore.init(CipherCore.java:482)
+	at java.base/com.sun.crypto.provider.CipherCore.init(CipherCore.java:400)
+	at java.base/com.sun.crypto.provider.AESCipher.engineInit(AESCipher.java:306)
+	at java.base/javax.crypto.Cipher.implInit(Cipher.java:867)
+	at java.base/javax.crypto.Cipher.chooseProvider(Cipher.java:929)
+	at java.base/javax.crypto.Cipher.init(Cipher.java:1299)
+	at java.base/javax.crypto.Cipher.init(Cipher.java:1236)
+	at com.hdfc.capstone.ems.utils.EncryptionUtil.encrypt(EncryptionUtil.java:19)
+	at com.hdfc.capstone.ems.vo.EmployeeVO.<init>(EmployeeVO.java:22)
+	at com.hdfc.capstone.ems.service.EmployeeServiceImpl.getEmployeeById(EmployeeServiceImpl.java:29)
+	at com.hdfc.capstone.ems.controller.EmployeeController.getEmployeeById(EmployeeController.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-04-25 10:36:40.847 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-04-25 10:36:40.858 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-25 10:36:40.859 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-25 10:36:40.866 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:36:40.868 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-25 10:36:40.876 [RMI TCP Connection(4)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-25 10:36:43.406 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 12196 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-25 10:36:43.409 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-25 10:36:44.107 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 10:36:44.177 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interfaces.
+2023-04-25 10:36:44.747 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7500 (https)
+2023-04-25 10:36:44.760 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-25 10:36:44.763 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-25 10:36:44.925 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-25 10:36:44.925 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1456 ms
+2023-04-25 10:36:45.134 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 10:36:45.184 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 10:36:45.380 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 10:36:45.496 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-04-25 10:36:45.691 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-04-25 10:36:45.727 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-25 10:36:46.401 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 10:36:46.412 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:36:46.728 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-25 10:36:47.489 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-7500], TLS virtual host [_default_], certificate type [UNDEFINED] configured from [file:/D:/HDFC_Training/Capstone/employee-management-system/bin/main/keystore.p12] using alias [keystore] and with trust store [null]
+2023-04-25 10:36:47.516 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7500 (https) with context path ''
+2023-04-25 10:36:47.530 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Started EmployeeManagementSystemApplication in 4.55 seconds (JVM running for 5.519)
+2023-04-25 10:36:50.900 [https-jsse-nio-7500-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 10:36:50.901 [https-jsse-nio-7500-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-25 10:36:50.901 [https-jsse-nio-7500-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2023-04-25 10:36:50.944 [https-jsse-nio-7500-exec-4] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 2 called
+2023-04-25 10:37:40.652 [https-jsse-nio-7500-exec-5] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 1 called
+2023-04-25 10:37:45.097 [https-jsse-nio-7500-exec-6] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 3 called
+2023-04-25 10:37:48.232 [https-jsse-nio-7500-exec-3] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 6 called
+2023-04-25 10:38:58.139 [https-jsse-nio-7500-exec-4] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 76 called
+2023-04-25 10:38:58.144 [https-jsse-nio-7500-exec-4] INFO  c.h.c.e.e.GlobalExceptionHandler - Invalid EmployeeId : 76
+2023-04-25 10:44:47.588 [https-jsse-nio-7500-exec-2] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 64 called
+2023-04-25 10:44:47.593 [https-jsse-nio-7500-exec-2] INFO  c.h.c.e.e.GlobalExceptionHandler - Invalid EmployeeId : 64
+2023-04-25 10:44:54.237 [https-jsse-nio-7500-exec-3] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 3 called
+2023-04-25 10:45:20.095 [RMI TCP Connection(13)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-04-25 10:45:20.107 [RMI TCP Connection(13)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-25 10:45:20.109 [RMI TCP Connection(13)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-25 10:45:20.117 [RMI TCP Connection(13)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:45:20.119 [RMI TCP Connection(13)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-25 10:45:20.127 [RMI TCP Connection(13)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-25 23:16:38.915 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 11536 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-25 23:16:38.943 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-25 23:16:39.891 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 23:16:39.957 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interfaces.
+2023-04-25 23:16:40.688 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7500 (https)
+2023-04-25 23:16:40.712 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-25 23:16:40.715 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-25 23:16:40.866 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-25 23:16:40.866 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1845 ms
+2023-04-25 23:16:41.125 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 23:16:41.178 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 23:16:41.350 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 23:16:41.479 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-04-25 23:16:41.672 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-04-25 23:16:41.705 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-25 23:16:42.402 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 23:16:42.428 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 23:16:42.749 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-25 23:16:43.562 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-7500], TLS virtual host [_default_], certificate type [UNDEFINED] configured from [file:/D:/HDFC_Training/Capstone/employee-management-system/bin/main/keystore.p12] using alias [keystore] and with trust store [null]
+2023-04-25 23:16:43.599 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7500 (https) with context path ''
+2023-04-25 23:16:43.615 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Started EmployeeManagementSystemApplication in 5.262 seconds (JVM running for 6.268)
+2023-04-25 23:16:54.569 [https-jsse-nio-7500-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 23:16:54.569 [https-jsse-nio-7500-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-25 23:16:54.570 [https-jsse-nio-7500-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-04-25 23:16:54.627 [https-jsse-nio-7500-exec-3] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 6 called
+2023-04-25 23:16:59.342 [https-jsse-nio-7500-exec-6] INFO  c.h.c.e.e.GlobalExceptionHandler - Please provide Employee Id in numbers only
+2023-04-25 23:20:18.146 [RMI TCP Connection(8)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-04-25 23:20:18.158 [RMI TCP Connection(8)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-25 23:20:18.159 [RMI TCP Connection(8)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-25 23:20:18.166 [RMI TCP Connection(8)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 23:20:18.168 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-25 23:20:18.178 [RMI TCP Connection(8)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-04-25 23:20:20.345 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Starting EmployeeManagementSystemApplication using Java 17.0.6 on DESKTOP-OLE59UD with PID 9812 (D:\HDFC_Training\Capstone\employee-management-system\bin\main started by gnave in D:\HDFC_Training\Capstone\employee-management-system)
+2023-04-25 23:20:20.349 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-25 23:20:21.039 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 23:20:21.096 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interfaces.
+2023-04-25 23:20:21.646 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7500 (https)
+2023-04-25 23:20:21.660 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-25 23:20:21.661 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-04-25 23:20:21.801 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-25 23:20:21.801 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1396 ms
+2023-04-25 23:20:22.014 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 23:20:22.073 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 23:20:22.268 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 23:20:22.373 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-04-25 23:20:22.550 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-04-25 23:20:22.578 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-04-25 23:20:23.225 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 23:20:23.237 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 23:20:23.528 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-25 23:20:24.227 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-7500], TLS virtual host [_default_], certificate type [UNDEFINED] configured from [file:/D:/HDFC_Training/Capstone/employee-management-system/bin/main/keystore.p12] using alias [keystore] and with trust store [null]
+2023-04-25 23:20:24.253 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7500 (https) with context path ''
+2023-04-25 23:20:24.266 [main] INFO  c.h.c.e.EmployeeManagementSystemApplication - Started EmployeeManagementSystemApplication in 4.334 seconds (JVM running for 5.332)
+2023-04-25 23:22:46.992 [https-jsse-nio-7500-exec-6] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 23:22:46.992 [https-jsse-nio-7500-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-25 23:22:46.994 [https-jsse-nio-7500-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-04-25 23:22:47.033 [https-jsse-nio-7500-exec-6] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 1 called
+2023-04-25 23:22:51.069 [https-jsse-nio-7500-exec-7] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 2 called
+2023-04-25 23:25:39.111 [https-jsse-nio-7500-exec-5] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 2 called
+2023-04-25 23:25:42.015 [https-jsse-nio-7500-exec-6] INFO  c.h.c.e.c.EmployeeController - getByEmployeeId : 1 called
+2023-04-25 23:26:35.924 [RMI TCP Connection(10)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2023-04-25 23:26:35.934 [RMI TCP Connection(10)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-25 23:26:35.936 [RMI TCP Connection(10)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-25 23:26:35.943 [RMI TCP Connection(10)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 23:26:35.946 [RMI TCP Connection(10)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-04-25 23:26:35.955 [RMI TCP Connection(10)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
