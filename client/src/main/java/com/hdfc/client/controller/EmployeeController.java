@@ -19,10 +19,10 @@ import com.hdfc.client.service.IEmployeeService;
 public class EmployeeController {
 	
 	@Autowired
-	IEmployeeService service;
+	IEmployeeService employeeService;
 	
 	@GetMapping("/get/{employeeId}")
 	public Employee getEmployee(@PathVariable long employeeId) {
-		return service.getEmployee(employeeId);
+		return employeeService.getEmployee(employeeId);
 	}
 }

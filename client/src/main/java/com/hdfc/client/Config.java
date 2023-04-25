@@ -33,7 +33,7 @@ RestTemplate restTemplate(RestTemplateBuilder builder) {
 }
  
  private HttpComponentsClientHttpRequestFactory validateSSL(){
-     String location = "D:\\HDFC_Training\\Capstone\\employee-management-system\\src\\main\\resources\\keystore.p12";
+     String location = "src/main/resources/keystore.p12";
      String pass = "bharath";
      SSLContext sslContext = null;
      try{
