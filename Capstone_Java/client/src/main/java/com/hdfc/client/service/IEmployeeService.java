@@ -1,6 +1,6 @@
 package com.hdfc.client.service;
 
-import com.hdfc.client.entiry.Employee;
+import com.hdfc.client.dto.Employee;
 /**
  * 
  * @author Bharath Kumar

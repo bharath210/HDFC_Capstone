@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.hdfc.client.entiry.Employee;
+import com.hdfc.client.dto.Employee;
 /**
  * 
  * @author Bharath Kumar

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hdfc.client.entiry.Employee;
+import com.hdfc.client.dto.Employee;
 import com.hdfc.client.service.IEmployeeService;
 /**
  * 
