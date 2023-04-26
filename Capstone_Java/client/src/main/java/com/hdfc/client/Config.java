@@ -8,9 +8,11 @@ import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.client.RestTemplate;
@@ -24,7 +26,9 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class Config {
-	
+
+@Value("${server.ssl.key-store}")
+Resource file;
  @Bean
 RestTemplate restTemplate(RestTemplateBuilder builder) {
     return builder
@@ -41,7 +45,8 @@ RestTemplate restTemplate(RestTemplateBuilder builder) {
 }
  
  private HttpComponentsClientHttpRequestFactory validateSSL() throws Exception{
-     String location = "src/main/resources/keystore.p12";
+
+     String location = file.getURL().getPath();
      String pass = "bharath";
      SSLContext sslContext = SSLContextBuilder
              .create()
