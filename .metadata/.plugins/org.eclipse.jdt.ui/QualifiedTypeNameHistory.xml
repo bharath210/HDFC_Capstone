@@ -7,7 +7,6 @@
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="com.hdfc.employee.repository.IEmployeeRepository"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestControllerAdvice"/>
     <fullyQualifiedTypeName name="com.hdfc.employee.exception.EmployeeNotFoundException"/>
     <fullyQualifiedTypeName name="com.hdfc.employee.service.IEmployeeService"/>
@@ -51,4 +50,5 @@
     <fullyQualifiedTypeName name="com.hdfc.client.utils.DecryptionUtil"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
     <fullyQualifiedTypeName name="com.hdfc.client.service.IEmployeeService"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

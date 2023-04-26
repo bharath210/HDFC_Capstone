@@ -28,22 +28,26 @@ public class Config {
  @Bean
 RestTemplate restTemplate(RestTemplateBuilder builder) {
     return builder
-    		.requestFactory( () -> validateSSL())
+    		.requestFactory( () -> {
+				try {
+					return validateSSL();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return null;
+			})
             .build();
 }
  
- private HttpComponentsClientHttpRequestFactory validateSSL(){
+ private HttpComponentsClientHttpRequestFactory validateSSL() throws Exception{
      String location = "src/main/resources/keystore.p12";
      String pass = "bharath";
-     SSLContext sslContext = null;
-     try{
-         sslContext = SSLContextBuilder
-                 .create()
-                 .loadTrustMaterial(ResourceUtils.getFile(location), pass.toCharArray())
-                 .build();
-     }catch (Exception e){
-
-     }
+     SSLContext sslContext = SSLContextBuilder
+             .create()
+             .loadTrustMaterial(ResourceUtils.getFile(location), pass.toCharArray())
+             .build();;
+    
      SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext,new LocalHostnameVerifier());
      CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(csf).build();
      HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
