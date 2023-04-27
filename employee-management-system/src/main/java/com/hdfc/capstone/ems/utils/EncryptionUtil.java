@@ -10,7 +10,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class EncryptionUtil {
 	
 	private static final String ALGORITHM = "AES";
-    private static final String KEY = "mysecretkey12345";
+    private static final String KEY = "EmployeeEncryption871233";
     
     public static String encrypt(String text) {
         try {

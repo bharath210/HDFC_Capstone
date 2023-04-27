@@ -25,46 +25,45 @@ import org.springframework.web.client.RestTemplate;
  */
 
 @Configuration
-public class Config {
+public class SSLConfig {
 
-@Value("${server.ssl.key-store}")
-Resource file;
- @Bean
-RestTemplate restTemplate(RestTemplateBuilder builder) {
-    return builder
-    		.requestFactory( () -> {
-				try {
-					return validateSSL();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				return null;
-			})
-            .build();
-}
- 
- private HttpComponentsClientHttpRequestFactory validateSSL() throws Exception{
+	@Value("${server.ssl.key-store}")
+	Resource keystore;
 
-     String location = file.getURL().getPath();
-     String pass = "bharath";
-     SSLContext sslContext = SSLContextBuilder
-             .create()
-             .loadTrustMaterial(ResourceUtils.getFile(location), pass.toCharArray())
-             .build();
-  
-     SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext,new LocalHostnameVerifier());
-     CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(csf).build();
-     HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
+	@Value("${server.ssl.key-store-password}")
+	String password;
 
-     return requestFactory;
- }
+	@Bean
+	RestTemplate restTemplate(RestTemplateBuilder builder) {
+		return builder.requestFactory(() -> {
+			try {
+				return validateSSL();
+			} catch (Exception e) {
 
- private class LocalHostnameVerifier implements HostnameVerifier {
-     @Override
-     public boolean verify(String s, SSLSession sslSession) {
-         return "localhost".equalsIgnoreCase(s) || "127.0.0.1".equals(s);
-     }
- }
+			}
+			return null;
+		}).build();
+	}
+
+	private HttpComponentsClientHttpRequestFactory validateSSL() throws Exception {
+
+		String location = keystore.getURL().getPath();
+		String pass = password;
+		SSLContext sslContext = SSLContextBuilder.create()
+				.loadTrustMaterial(ResourceUtils.getFile(location), pass.toCharArray()).build();
+
+		SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext, new LocalHostnameVerifier());
+		CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(csf).build();
+		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
+
+		return requestFactory;
+	}
+
+	private class LocalHostnameVerifier implements HostnameVerifier {
+		@Override
+		public boolean verify(String s, SSLSession sslSession) {
+			return "localhost".equalsIgnoreCase(s) || "127.0.0.1".equals(s);
+		}
+	}
 
 }
