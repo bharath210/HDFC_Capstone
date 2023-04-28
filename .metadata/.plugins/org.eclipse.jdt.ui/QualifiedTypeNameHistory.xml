@@ -28,9 +28,7 @@
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
     <fullyQualifiedTypeName name="org.apache.http.conn.ssl.TrustStrategy"/>
-    <fullyQualifiedTypeName name="java.security.cert.CertificateException"/>
     <fullyQualifiedTypeName name="javax.net.ssl.SSLContext"/>
-    <fullyQualifiedTypeName name="java.security.cert.X509Certificate"/>
     <fullyQualifiedTypeName name="org.apache.http.ssl.SSLContextBuilder"/>
     <fullyQualifiedTypeName name="com.hdfc.employee.service.EmployeeServiceImpl"/>
     <fullyQualifiedTypeName name="com.hdfc.employee.vo.EmployeeVO"/>
@@ -50,6 +48,9 @@
     <fullyQualifiedTypeName name="com.hdfc.client.utils.DecryptionUtil"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
     <fullyQualifiedTypeName name="com.hdfc.client.service.IEmployeeService"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="org.springframework.core.io.Resource"/>
+    <fullyQualifiedTypeName name="org.apache.http.ssl.TrustStrategy"/>
+    <fullyQualifiedTypeName name="java.security.cert.CertificateException"/>
+    <fullyQualifiedTypeName name="java.security.cert.X509Certificate"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>
