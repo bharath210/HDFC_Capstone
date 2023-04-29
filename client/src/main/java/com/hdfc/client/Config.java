@@ -1,24 +1,19 @@
 package com.hdfc.client;
 
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
+import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 
+import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.ssl.TrustStrategy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -30,61 +25,43 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class Config {
-	
-	@Value("${server.ssl.key-store}")
-	Resource file;
-	
- @Bean
-RestTemplate restTemplate(RestTemplateBuilder builder) {
-    return builder
-    		.requestFactory( () -> {
-				try {
-					return disableSSl();
-				} catch (Exception e) {
-					
-				}
-				return null;
-			})
-            .build();
-}
- 
- private HttpComponentsClientHttpRequestFactory disableSSl() throws Exception{
-     TrustStrategy acceptingTrustStrategy = new TrustStrategy() {
-         @Override
-         public boolean isTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
-             return true;
-         }
-     };
-     SSLContext sslContext = org.apache.http.ssl.SSLContexts.custom().loadTrustMaterial(null, acceptingTrustStrategy).build();
-     
-     SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext, new NoopHostnameVerifier());
-     CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(csf).build();
-     HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
-     requestFactory.setHttpClient(httpClient);
 
-     return requestFactory;
- }
- 
-// private HttpComponentsClientHttpRequestFactory validateSSL() throws Exception{
-//     String location = file.getURL().getPath();
-//     String pass = "bharath";
-//     SSLContext sslContext = SSLContextBuilder
-//             .create()
-//             .loadTrustMaterial(ResourceUtils.getFile(location), pass.toCharArray())
-//             .build();;
-//    
-//     SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext,new LocalHostnameVerifier());
-//     CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(csf).build();
-//     HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
-//
-//     return requestFactory;
-// }
-//
-// private class LocalHostnameVerifier implements HostnameVerifier {
-//     @Override
-//     public boolean verify(String s, SSLSession sslSession) {
-//         return "localhost".equalsIgnoreCase(s) || "127.0.0.1".equals(s);
-//     }
-// }
+	@Bean
+	RestTemplate restTemplate() {
+		// Create a trust manager that does not validate certificate chains
+		TrustManager[] trustAllCerts = new TrustManager[] { new X509TrustManager() {
+			public X509Certificate[] getAcceptedIssuers() {
+				return null;
+			}
+
+			public void checkClientTrusted(X509Certificate[] certs, String authType) {
+			}
+
+			public void checkServerTrusted(X509Certificate[] certs, String authType) {
+			}
+		} };
+
+		// Install the all-trusting trust manager
+		try {
+			SSLContext sc = SSLContext.getInstance("SSL");
+			sc.init(null, trustAllCerts, new SecureRandom());
+			HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+		} catch (Exception e) {
+			// Handle exception
+		}
+
+		// Disable host name verification
+		HttpsURLConnection.setDefaultHostnameVerifier((hostname, sslSession) -> true);
+
+		// Set a custom request factory that uses the updated SSL context
+		SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+		requestFactory.setBufferRequestBody(false);
+		requestFactory.setOutputStreaming(false);
+		requestFactory.setConnectTimeout(5000);
+		requestFactory.setReadTimeout(5000);
+	   
+		RestTemplate restTemplate = new RestTemplate(requestFactory);
+		return restTemplate;
+	}
 
 }
